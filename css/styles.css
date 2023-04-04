@@ -1,0 +1,17 @@
+
+
+/* -----------------------------variables------------------------------------------- */
+
+:root{
+    --Black: hsl(0, 0%, 0%);
+    --almostBlack: hsl(330, 10%, 4%);
+    --superDarkBlueGray: hsl(206, 14%, 10%);
+    --mediumGray: hsl(5, 7%, 67%);
+    --lightGray: hsl(0, 0%, 83%);
+    --superLightGray: hsl(330, 9%, 96%);
+    --white: hsl(0, 0%, 100%);
+    --darkBoard: hsl(359, 87%, 21%);
+    --boardRed: hsl(358, 76%, 36%);
+    --red: hsl(359, 77%, 41%);
+    --lightyRed: hsl(359, 77%, 56%);
+}
