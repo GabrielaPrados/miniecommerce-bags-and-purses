@@ -1,8 +1,6 @@
-
-
 /* -----------------------------variables------------------------------------------- */
 
-:root{
+:root {
     --Black: hsl(0, 0%, 0%);
     --almostBlack: hsl(330, 10%, 4%);
     --superDarkBlueGray: hsl(206, 14%, 10%);
@@ -18,33 +16,33 @@
 
 /* -----------------------------------------resets-------------------------------------------- */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 /* -----------------------------------------clases-------------------------------------------- */
 
-.displayCenter{
+.displayCenter {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-
 /* ------------------------------------------------------------------------------------------- */
 
-body{
-    font-family:Arial, Helvetica, sans-serif ;
+body {
+    font-family: Arial, Helvetica, sans-serif;
     max-width: 1200px;
     background-color: var(--boardRed);
     margin: 0px auto;
     height: 100vh;
+    
 }
 
-body>main{
+body > main {
     position: relative;
     margin: 5vh auto;
     width: 90%;
@@ -56,46 +54,52 @@ body>main{
 /* ---------------------------*/
 /* SECTION SEARCHPRODUCTS */
 
-.searchProducts{
+.searchProducts {
     width: 15%;
     min-width: 130px;
     background-color: var(--lightGray);
 }
 
+.searchProducts ul{
+    list-style: none;
+    width: 80%;
+    margin: 0px auto;
+}
+
 /* SEARCHPRODUCTS FORM */
 
-form{
+form {
     width: 80%;
     margin: 70px auto 20px;
     position: relative;
 }
 
-form input{
+form input {
     width: 100%;
-    
+    padding: 2px;
 }
 
-form label{
+form label {
     position: absolute;
-    top: 2px;
+    top: 3px;
     right: 2px;
-    font-size: .6rem;
+    font-size: 0.6rem;
 }
-
 
 /* ---------------------------*/
 /* SECTION DISPLAYPRODUCTS*/
 
-.displayProducts{
+.displayProducts {
     width: 100%;
     height: 100%;
+    min-height: 90vh;
     padding: 20px;
     background-color: var(--ligthLightGray);
 }
 
-/* DISPLAYPRODUCTS CART */
+/* DISPLAYPRODUCTS card */
 
-.cart{
+.cart {
     height: auto;
     padding: 10px;
     width: 100%;
@@ -103,13 +107,13 @@ form label{
     align-items: flex-end;
 }
 
-.cart img{
+.cart img {
     width: 30px;
 }
 
-.cart span{
+.cart span {
     color: var(--ligthLightGray);
-    font-size: .8rem;
+    font-size: 0.8rem;
     background-color: var(--boardRed);
     width: 20px;
     height: 20px;
@@ -117,13 +121,13 @@ form label{
     margin-bottom: 5px;
 }
 
-.menu img{
+.menu img {
     display: none;
 }
 
 /* DISPLAYPRODUCTS ARTICLES*/
 
-.displayProducts .bagsCarts{
+.displayProducts .bagsCards {
     width: 100%;
     height: 100%;
     display: flex;
@@ -132,52 +136,49 @@ form label{
     flex-wrap: wrap;
 }
 
-.bagsCarts article{
+.bagsCards article {
     width: 30%;
     min-width: 180px;
     height: auto;
     margin: 20px auto;
+    padding: 5px;
     border-radius: 5px;
     background-color: var(--white);
-    transition: all .5s;
+    transition: all 0.5s;
 }
 
-.bagsCarts article header{
-  text-align: center;
-  transition: all .5s;
+.bagsCards article header {
+    text-align: center;
+    transition: all 0.5s;
 }
 
-.bagsCarts article h2{
+.bagsCards article h2 {
     font-size: 1rem;
 }
 
-.bagsCarts article main{
+.bagsCards article main {
     width: 100%;
     height: 150px;
     position: relative;
     margin: 0;
-    
 }
 
-
-.bagsCarts article main div{
+.bagsCards article main div {
     width: 100%;
 }
 
-.bagsCarts article main img{
+.bagsCards article main img {
     width: 20px;
     position: absolute;
     top: 20px;
     right: 10px;
-    
 }
 
-.redHeart{
+.redHeart {
     display: none;
-   
 }
 
-.bagsCarts article main img:first-child{
+.bagsCards article main img:first-child {
     display: block;
     height: auto;
     max-height: 150px;
@@ -186,25 +187,25 @@ form label{
     position: static;
 }
 
-.bagsCarts article h3{
+.bagsCards article h3 {
     margin-top: 10px;
-    font-size: .8rem;
+    font-size: 0.8rem;
 }
 
-.bagsCarts article h4{
-    font-size: .6rem;
+.bagsCards article h4 {
+    font-size: 0.6rem;
     color: var(--red);
     margin: 7px 0;
 }
 
-.bagsCarts article footer p{
-    font-size: .6rem;
+.bagsCards article footer p {
+    font-size: 0.6rem;
     opacity: 0;
     text-align: center;
-    transition: all .5s;
+    transition: all 0.5s;
 }
 
-.bagsCarts article button{
+.bagsCards article button {
     width: 110px;
     display: block;
     margin: 20px auto;
@@ -213,29 +214,28 @@ form label{
     border: none;
     padding: 3px;
     border-radius: 5px;
-    transition: all .5s;
+    transition: all 0.5s;
 }
-
 
 /* -------------------------------hoovers------------------------------------------ */
 
-.bagsCarts article:hover{
+.bagsCards article:hover {
     box-shadow: 2px 2px 7px var(--lightGray), -2px -2px 7px var(--lightGray);
     transform: translateY(-1px);
 }
 
-.bagsCarts article:hover header{
+.bagsCards article:hover header {
     border-radius: 5px;
     padding: 3px;
     background-color: var(--lightGray);
     color: var(--boardRed);
 }
 
-.bagsCarts article:hover p{
+.bagsCards article:hover p {
     opacity: 1;
 }
 
-.bagsCarts article button:hover{
+.bagsCards article button:hover {
     background-color: var(--white);
     color: var(--boardRed);
     border: solid 2px var(--red);
@@ -243,45 +243,44 @@ form label{
     box-shadow: 2px 2px 2px var(--lightGray);
 }
 
-
 /* ----------------------------------------medias-------------------------------------- */
 
-@media (max-width: 380px){
-    
+@media (max-width: 380px) {
     /* SECTION SEARCHPRODUCTS */
-    .searchProducts{
+    .searchProducts {
         min-width: 30px;
         position: sticky;
         top: 0;
         left: 0;
     }
 
-
-    .menu img{
+    .menu img {
         display: block;
         width: 15px;
         margin: 15px auto;
     }
 
-    form{
+    form {
         display: none;
     }
-
-
 }
-
 
 /* ------------------------------------clases js-------------------------------------- */
 
-.sectionSearch{ 
-  min-width: 70vw;  
-  width: 70vw;
+.sectionSearch {
+    position: absolute;
+    min-width: 70vw;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 70vw;
+    z-index: 1;
 }
 
-.displayBlock{
+.displayBlock {
     display: block;
 }
 
-.displayNone{
+.displayNone {
     display: none;
 }
