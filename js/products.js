@@ -1,4 +1,4 @@
-const productos = [
+const products = [
     {
         img: "../imgs/prune1.webp",
         brand: "Prune",
