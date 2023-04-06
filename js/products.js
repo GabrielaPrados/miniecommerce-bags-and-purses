@@ -1,4 +1,4 @@
-const products = [
+let products = [
     {
         img: "../imgs/prune1.webp",
         brand: "Prune",

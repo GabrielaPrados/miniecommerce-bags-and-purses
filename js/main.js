@@ -1,4 +1,11 @@
 
+window.addEventListener("DOMContentLoaded", () => {
+    
+displayBrands()
+displayProducts()
+
+})
+
 document.addEventListener("click", e => {
     const t = e.target
 
@@ -20,6 +27,10 @@ document.addEventListener("click", e => {
     if (t.classList.contains("redHeart")) {
         t.classList.toggle("displayBlock")
     }
+})
 
 
+document.querySelector("#searchBrand").addEventListener("submit", e => {
+    e.preventDefault()
+    searchInput()
 })

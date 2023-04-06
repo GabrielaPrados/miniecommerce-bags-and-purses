@@ -9,6 +9,7 @@
     --ligthLightGray: hsl(330, 9%, 96%);
     --white: hsl(0, 0%, 100%);
     --darkBoard: hsl(359, 87%, 21%);
+    --darkBoardRGBA: rgba(100, 7, 9, .2);
     --boardRed: hsl(358, 76%, 36%);
     --red: hsl(359, 77%, 41%);
     --lightyRed: hsl(359, 77%, 56%);
@@ -314,4 +315,13 @@ form label {
     background-color: var(--white);
     color: var(--boardRed);
     border: solid 1px var(--red);
+}
+
+.notSerachingFound{
+    width: 70%;
+    height: 50%;
+    background-color: var(--darkBoardRGBA);
+    color: var(--Black);
+    padding: 20px; 
+    text-align: center;
 }
