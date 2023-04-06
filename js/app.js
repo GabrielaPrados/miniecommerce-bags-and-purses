@@ -1,7 +1,15 @@
 
 let appProducts = products
-const { img, brand, title, description, price } = appProducts
+// const { img, brand, title, description, price } = appProducts
 
+
+function displayBrands() {
+    const brands = ["todas", ...new Set(appProducts.map(prodBrand => prodBrand = prodBrand.brand))]
+    const divBrands = document.querySelector("div.brands")
+    divBrands.innerHTML = brands.map(elem => elem = `<button class="brandButton">${elem}</button>`).join("")
+}
+
+displayBrands()
 
 function displayProducts() {
     appProducts =  appProducts.map(prod => {
@@ -20,7 +28,7 @@ function displayProducts() {
         </main>
         <footer>
             <h3>$${prod.price}</h3>
-            <h4>Envío gratis</h4>
+            <h4>${prod.delivery}</h4>
             <div class="displayCenter">
                 <p>${prod.description}</p>
             </div>
@@ -28,6 +36,7 @@ function displayProducts() {
         <button>Enviar a carrito</button>
     </article>`
     })
+    
     
     appProducts.forEach(article => {
     const divBagsCards = document.querySelector(".bagsCards")
