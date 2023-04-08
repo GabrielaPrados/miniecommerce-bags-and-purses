@@ -29,15 +29,71 @@ document.addEventListener("click", e => {
     if (t.classList.contains("redHeart")) {
         t.classList.toggle("displayBlock")
     }
-
+    
+     /* SEARCH BY BRAND NAME  */
     if (t.matches(".brands button")) {
-        console.log(t.id)
         searchButton(t)
+        resetSelect()
+    }
+    
+     /* DISPLAYING PRODUCTS FROM LOWER PRICE  */
+    if (t.classList.contains("lowerPrice")) {
+        appProducts = LowerPrice()
+        displayProducts()
+        
+    }
+
+    /* DISPLAYING PRODUCTS FROM HIGHER PRICE  */
+    if (t.classList.contains("higherPrice")) {
+        appProducts = higherPrice()
+        displayProducts()
+        console.log("ok");
+    }
+    
+    /* event for:
+    1- add one to cart number 
+    2 - substract one to stock 
+    3- if stock is === 0 => no stock */
+    if (t.classList.contains("addCart")) {
+        addCart(t)
+    }
+
+
+    /* EVENT FOR SHOWING CART */
+    if (t.matches("#cartImg")) {
+        
+        const sectionCart = document.querySelector(".sectionCart")
+        console.log(sectionCart);
+        sectionCart.classList.remove("hide")
+        sectionCart.classList.remove("withoutHeight")
+        sectionCart.classList.add("height")
+    }
+
+    /* EVENT FOR HIDEING CART */
+    if (t.matches("#close")) {
+        
+        const sectionCart = document.querySelector(".sectionCart")
+        console.log(sectionCart);
+        sectionCart.classList.remove("height")
+        sectionCart.classList.add("withoutHeight")
+        sectionCart.classList.add("hide")
+    }
+   
+})
+
+document.addEventListener("change", e => {
+      const t = e.target  
+
+     /* SEARCHING PRODUCTS IN A RANGE OF PRICE */
+    if (t.matches("#prices")) {
+        rangePrices(t)
     }
 })
 
-
+/* THIS EVENT IS FOR SEARCHING PRODUCTS AND DISPLAYING THEM  */
 document.querySelector("#searchBrand").addEventListener("submit", e => {
     e.preventDefault()
     searchInput()
+    resetSelect()
 })
+

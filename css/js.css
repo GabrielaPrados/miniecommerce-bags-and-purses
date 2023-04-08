@@ -1,0 +1,90 @@
+
+/* ------------------------------------clases js-------------------------------------- */
+
+.sectionSearch {
+    position: absolute;
+    min-width: 70vw;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 70vw;
+    z-index: 2;
+}
+
+.displayBlock {
+    display: block;
+}
+
+.displayNone {
+    display: none;
+}
+
+.brandButton{
+    display: block;
+    font-size: .8rem;
+    background-color: var(--boardRed);
+    color: var(--ligthLightGray);
+    padding: 5px;
+    width: 80%;
+    margin: 7px auto;
+    border: var(--ligthLightGray);
+    transition: all .5s;
+}
+
+.brandButton:hover{
+    background-color: var(--white);
+    color: var(--boardRed);
+    border: solid 1px var(--red);
+}
+
+.notSerachingFound{
+    width: 70%;
+    height: 50%;
+    background-color: var(--greenRGBA);
+    color: var(--green);
+    font-weight: bold;
+    border: 5px double var(--green);
+    padding: 20px; 
+    text-align: center;
+}
+
+.brandName{
+    color: var(--red);
+    font-weight: bolder;
+}
+
+.stock{
+    font-size: .8rem;
+    padding: 5px;
+    background-color: var(--greenRGBA);
+    border: solid 2px var(--green);
+    color: var(--green);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+@keyframes show {
+    from {transform: translateY(-100vh);}
+    to {transform: translateY(0);}
+}
+
+@keyframes desapear {
+    from {transform: translateY(0);}
+    to {transform: translateY(-100vh);}
+}
+
+.hide{
+    transform: translateY(-100vh); 
+}
+
+.height{
+ animation: show 1s;
+}
+
+.withoutHeight{
+    animation: desapear 1s;
+}
+
+
+

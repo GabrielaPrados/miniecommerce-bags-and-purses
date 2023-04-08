@@ -3,6 +3,7 @@
 :root {
     --Black: hsl(0, 0%, 0%);
     --almostBlack: hsl(330, 10%, 4%);
+    --almostBlackRGB: rgba(11, 9, 10, .5);
     --superDarkBlueGray: hsl(206, 14%, 10%);
     --mediumGray: hsl(5, 7%, 67%);
     --lightGray: hsl(0, 0%, 83%);
@@ -13,7 +14,8 @@
     --boardRed: hsl(358, 76%, 36%);
     --red: hsl(359, 77%, 41%);
     --lightyRed: hsl(359, 77%, 56%);
-    --green: green;
+    --green: hsl(120, 100%, 25%);
+    --greenRGBA: rgba(93, 132, 93, 0.2);
 }
 
 /* -----------------------------------------resets-------------------------------------------- */
@@ -60,6 +62,7 @@ body > main {
     width: 15%;
     min-width: 130px;
     background-color: var(--lightGray);
+    transition: all .5s;
 }
 
 .searchProducts ul{
@@ -68,10 +71,32 @@ body > main {
     margin: 0px auto;
 }
 
-/* SEARCHPRODUCTS FORM */
-.searchProducts{
-    transition: all .5s;
+/* SEARCHPRODUCTS CART */
+.cart{
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
+
+.cart img {
+    width: 60px;
+    margin-bottom: 5px;
+}
+
+.cart span {
+    color: var(--ligthLightGray);
+    font-size: 1rem;
+    background-color: var(--boardRed);
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+}
+
+.menu img {
+    min-width: 40px;
+    display: none;
+}
+
+/* SEARCHPRODUCTS FORM */
 
 .searchProducts form {
     width: 80%;
@@ -106,22 +131,27 @@ body > main {
 /* DISPLAYPRODUCTS prices */
 
 .displayProducts .nav{
+    width: 100%;
     height: auto;
-    justify-content: space-between;
-    
+    justify-content: space-around;
+    flex-wrap: wrap-reverse;
+}
+.sectionPrices{
+    width: 80%;
 }
 
 .prices{
-    width: 90%;
-    justify-content: space-between;
-    align-items: flex-end;
+    width: 100%;
+    justify-content: flex-start;
     flex-wrap: wrap;
     padding: 10px;
+    margin: 0 auto;
 }
 
 .prices button{
-    height: 45px;
-    margin: 5px 10px;
+    width: 140px;
+    height: auto;
+    margin: 5px auto;
     padding: 7px;
     color: var(--green);
     font-weight: bolder;
@@ -131,15 +161,12 @@ body > main {
 }
 
 .prices form{
-    width: 30%;
     height: 45px;
-    margin: 5px 10px;
-    align-self: flex-start;
+    margin: 5px auto;
 }
 
 .prices form label{
-    width: 100%;
-    margin-bottom: 10px;
+    display: block;
     color: var(--green);
     font-weight: bolder;
 }
@@ -149,34 +176,6 @@ body > main {
     color: var(--green);
 }
 
-
-/* DISPLAYPRODUCTS card */
-
-.cart {
-    height: auto;
-    padding: 10px;
-    width: 15%;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-
-.cart img {
-    width: 60px;
-}
-
-.cart span {
-    color: var(--ligthLightGray);
-    font-size: 1rem;
-    background-color: var(--boardRed);
-    width: 40px;
-    height: 40px;
-    border-radius: 40px;
-    margin-bottom: 5px;
-}
-
-.menu img {
-    display: none;
-}
 
 /* DISPLAYPRODUCTS ARTICLES*/
 
@@ -273,7 +272,7 @@ body > main {
     width: 110px;
     display: block;
     margin: 20px auto;
-    background-color: var(--green);
+    background-color: var(--boardRed);
     color: var(--white);
     border: none;
     padding: 5px;
@@ -317,10 +316,10 @@ body > main {
 
 /* ----------------------------------------medias-------------------------------------- */
 
-@media (max-width: 380px) {
+@media (max-width: 520px) {
     /* SECTION SEARCHPRODUCTS */
     .searchProducts {
-        min-width: 30px;
+        min-width: 65px;
         position: sticky;
         top: 0;
         left: 0;
@@ -332,66 +331,197 @@ body > main {
         margin: 15px auto;
     }
 
-    form, 
+    .searchProducts form, 
     .brands {
         display: none;
     }
+
+    .sectionPrices form select{
+        max-width: 100px;
+    }
+
+    .sectionCart *{
+         margin-left: auto;
+         margin-bottom: auto;
+    }
+    
 }
 
-/* ------------------------------------clases js-------------------------------------- */
+/*------------------------------------------CART ------------------------------------------------- */
 
-.sectionSearch {
+
+#close{
+    width: 30px;
+    display: block;
+    margin: 20px 20px 0px auto;
+}
+
+.sectionCart{
+    flex-wrap: wrap;
+    background-color: var(--almostBlackRGB);
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
     position: absolute;
-    min-width: 70vw;
-    top: 0;
+    top: 0vh;
     left: 0;
-    height: 100%;
-    width: 70vw;
-    z-index: 2;
+    z-index: 4;
 }
 
-.displayBlock {
-    display: block;
+
+
+.sectionCart .divCart{
+    background-color: var(--ligthLightGray);
+    width: 60%;
+    min-width: 250px;
+    padding-bottom: 10px;
+    margin: 30px;
 }
 
-.displayNone {
-    display: none;
+.sectionCart .divCart article{
+    margin: 30px auto;
+    border-bottom: 1px solid var(--lightGray);
+    padding: 20px 40px 
 }
 
-.brandButton{
-    display: block;
-    font-size: .8rem;
-    background-color: var(--boardRed);
-    color: var(--ligthLightGray);
-    padding: 5px;
-    width: 80%;
-    margin: 7px auto;
-    border: var(--ligthLightGray);
-    transition: all .5s;
+.sectionCart .divCart article:first-of-type{
+    padding: 20px 30px 
 }
 
-.brandButton:hover{
-    background-color: var(--white);
-    color: var(--boardRed);
-    border: solid 1px var(--red);
+.sectionCart .divCart article:first-of-type div {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
 }
 
-.notSerachingFound{
-    width: 70%;
-    height: 50%;
-    background-color: var(--darkBoardRGBA);
-    color: var(--Black);
-    padding: 20px; 
+.sectionCart .divCart article:first-of-type *{
+    margin: 10px;
+}
+
+.sectionCart .divCart article:first-of-type button{
+    width: 150px;
+    margin-left: 20px;
+}
+
+.sectionCart .divCart img{
+    width: 150px;  
+}
+
+.description p{
+   font-size: 1rem;
+}
+
+.divCart .addSubstract{
+    flex-direction: column;  
+}
+
+.sectionCart .divCart .addSubstract > div,
+.sectionCart .divCart .addSubstract p{
+    width: 100px;
     text-align: center;
 }
 
-.brandName{
-    color: var(--red);
-    font-weight: bolder;
+
+.sectionCart .divCart .addSubstract > div span{
+    font-size: 1rem;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
-.stock{
+.divCart .addSubstract > div span:nth-child(odd){
+    background-color: var(--greenRGBA);
+    color: var(--green);
+    font-size: 1.5rem;
+    border: 1px solid var(--green);
+}
+
+.sectionCart .divCart .addSubstract p{
+    margin: 3px;
+    color: var(--red);
     font-size: .8rem;
-    color: var(--superDarkBlueGray);
-    margin-bottom: 5px;
+}
+
+
+.sectionCart .divCart article:nth-last-of-type(2),
+.sectionCart .divCart article:nth-last-of-type(1) {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.sectionCart .divCart article:nth-last-of-type(2) p,
+.sectionCart .divCart article:nth-last-of-type(1) p{
+    margin: 10px;
+    margin-left: 100px ;
+}
+
+.divCart > button,
+.sectionCart .divCart article:first-of-type button{
+    width: 200px;
+    margin: 20px;
+    padding: 10px;
+    background-color: var(--boardRed);
+    color: var(--ligthLightGray);
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    transition: all .2s;
+}
+
+.sectionCart .divCart article:first-of-type button{
+    width: 150px;
+    background-color: var(--green);
+    padding: 5px;
+}
+
+.divCart > button:hover,
+.sectionCart .divCart article:first-of-type button:hover{
+    cursor: pointer;
+    border: 5px double var(--lightGray);
+    margin: 15px 20px;
+}
+
+
+@media (max-width: 690px) {
+    .sectionCart .divCart{
+        width: 90%;
+    }
+
+    .sectionCart .divCart article:first-of-type div {
+         justify-content: center;
+         margin: 10px auto;
+    }
+
+    .sectionCart .divCart article:first-of-type div p{
+        width: 100%;
+    }
+
+    .sectionCart *{
+        text-align: center;
+    }
+
+    .sectionCart .divCart article:nth-last-of-type(2),
+    .sectionCart .divCart article:nth-last-of-type(1){
+        justify-content: center;
+    }
+
+    .sectionCart .divCart article:nth-last-of-type(2) p,
+    .sectionCart .divCart article:nth-last-of-type(1) p{
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .divCart .description div,
+    .sectionCart .divCart .description p,
+    .sectionCart .divCart .description h2{
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }  
 }

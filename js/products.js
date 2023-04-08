@@ -1,5 +1,6 @@
 let products = [
     {
+        id: 1,
         img: "../imgs/prune1.webp",
         brand: "Prune",
         title: "Cartera Bandolera",
@@ -9,6 +10,7 @@ let products = [
         delivery: "Envio Gratis"
     },
     {
+        id: 2,
         img: "../imgs/prune2.webp",
         brand: "Prune",
         title: "Cartera Bandolera",
@@ -18,6 +20,7 @@ let products = [
         delivery: "Envio Gratis"
     },
     {
+        id: 3,
         img: "../imgs/prune3.webp",
         brand: "Prune",
         title: "Mochila",
@@ -27,6 +30,7 @@ let products = [
         delivery: "Envio Gratis"
     },
     {
+        id: 4,
         img: "../imgs/prune4.webp",
         brand: "Prune",
         title: "Riñonera",
@@ -36,6 +40,7 @@ let products = [
         delivery: "Envio Gratis"
     },
     {
+        id: 5,
         img: "../imgs/trendy1.webp",
         brand: "Trendy",
         title: "Bandolera",
@@ -45,6 +50,7 @@ let products = [
         delivery: ""
     },
     {
+        id: 6,
         img: "../imgs/trendy2.webp",
         brand: "Trendy",
         title: "Morral Bolso",
@@ -54,6 +60,7 @@ let products = [
         delivery: ""
     },
     {
+        id: 7,
         img: "../imgs/trendy3.webp",
         brand: "Trendy",
         title: "Cartera",
@@ -63,6 +70,7 @@ let products = [
         delivery: "Envio Gratis"
     },
     {
+        id: 8,
         img: "../imgs/pierre1.webp",
         brand: "Pierre Cardin",
         title: "Mochila",
@@ -72,6 +80,7 @@ let products = [
         delivery: "Envio Gratis"
     },
     {
+        id: 9,
         img: "../imgs/pierre2.webp",
         brand: "Pierre Cardin",
         title: "Bandolera",
@@ -81,6 +90,7 @@ let products = [
         delivery: "Envio Gratis"
     },
     {
+        id: 10,
         img: "../imgs/pierre3.webp",
         brand: "Pierre Cardin",
         title: "Cartera",
@@ -90,6 +100,7 @@ let products = [
         delivery: "Envio Gratis"
     },
     {
+        id: 11,
         img: "../imgs/oreiro1.webp",
         brand: "Las Oreiro",
         title: "Mini Morral",
@@ -99,6 +110,7 @@ let products = [
         delivery: ""
     },
     {
+        id: 12,
         img: "../imgs/oreiro2.webp",
         brand: "Las Oreiro",
         title: "Cartera",
@@ -108,6 +120,7 @@ let products = [
         delivery: "Envio Gratis"
     },
     {
+        id: 13,
         img: "../imgs/oreiro3.webp",
         brand: "Las Oreiro",
         title: "Riñonera",
@@ -117,6 +130,7 @@ let products = [
         delivery: ""
     },
     {
+        id: 14,
         img: "../imgs/saveiro1.webp",
         brand: "Saveiro de Ricci",
         title: "Cartera",
@@ -126,6 +140,7 @@ let products = [
         delivery: "Envio Gratis"
     },
     {
+        id: 15,
         img: "../imgs/saveiro2.webp",
         brand: "Saveiro de Ricci",
         title: "Cartera",
@@ -135,6 +150,7 @@ let products = [
         delivery: "Envio Gratis"
     },
     {
+        id: 16,
         img: "../imgs/saveiro3.webp",
         brand: "Saveiro de Ricci",
         title: "Cartera",
@@ -144,6 +160,7 @@ let products = [
         delivery: "Envio Gratis"
     },
     {
+        id: 17,
         img: "../imgs/louis1.webp",
         brand: "Louis Vuitton",
         title: "Cartera",
@@ -153,6 +170,7 @@ let products = [
         delivery: "Envio Gratis"
     },
     {
+        id: 18,
         img: "../imgs/louis2.webp",
         brand: "Louis Vuitton",
         title: "Cartera",
@@ -162,3 +180,6 @@ let products = [
         delivery: "Envio Gratis"
     },
 ];
+
+
+
