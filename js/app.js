@@ -202,6 +202,7 @@ function addingProductToCart(t) {
     const targetProduct = products.find(prod => prod.id == t.id)
     const targetProductID = targetProduct.id
     
+    
     if ( localStorage.getItem(`product${targetProductID}`)) {
         shoppingsNumber(t)
     } else {
@@ -215,6 +216,10 @@ function shoppingsNumber(t) {
     const targetProduct = products.find(prod => prod.id == t.id)
     const spans = document.querySelectorAll(".numberSpan")
     const actualStock = document.querySelectorAll(`.prodStockSpan`)
+    const totalPrice = document.querySelectorAll(".totalPrice")
+    const deliverPrice = document.querySelector("#deliverPrice")
+    let subTotal = 0
+    
     spans.forEach(span => {
         if (span.id.includes(t.id)) {
             const actualNumber = Number(span.innerHTML)
@@ -227,11 +232,32 @@ function shoppingsNumber(t) {
             as.innerHTML = targetProduct.stock
         }
     }) 
-        
+
+    totalPrice.forEach(tp => {
+        if (tp.id.includes(t.id)) {
+            const actualNumber = Number(tp.innerHTML.replace(/[$.]/g, ""))
+            const total = actualNumber + targetProduct.price
+            tp.innerHTML = `$${new Intl.NumberFormat('de-DE').format(total)}`
+        }
+    }) 
+    
+    totalPrice.forEach(fp => {
+        const priceFP = Number(fp.innerHTML.replace(/[$.]/g, ""))
+        subTotal += priceFP
+ 
+    }) 
+    
+    
+
+    if (subTotal > 10000 ) {
+        deliverPrice.innerHTML = "$0,00"
+    }
+
     
 }
-// localStorage.clear()
-// console.log(localStorage.length);
+
+
+
 
 function creatShoppingArticle(targetProduct, targetProductID) {
     
@@ -254,10 +280,18 @@ function creatShoppingArticle(targetProduct, targetProductID) {
                     <div class="displayCenter"><span>-</span><span id="span.${id}" class = "numberSpan">0</span><span>+</span></div>
                     <p ><span id="prodStock${id}" class="prodStockSpan">${stock}</span> disponibles</p>
                 </div>
-                <p>$${new Intl.NumberFormat('de-DE').format(price)}</p>
+                <p id="prodPrice${id}" class = "totalPrice" ></p>
             </div>
             <button>Eliminar</button>
     `
     reference.insertAdjacentElement("beforebegin", article)
     
+}
+
+function setDeliverPrice(subTotal) {
+    const deliverPrice = document.querySelector("#deliverPrice")
+
+    if (subTotal > 10000 ) {
+        deliverPrice.innerHTML = "$0,00"
+    }else{deliverPrice.innerHTML = "$1.000"}
 }
