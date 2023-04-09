@@ -65,17 +65,17 @@
 
 
 @keyframes show {
-    from {transform: translateY(-100vh);}
-    to {transform: translateY(0);}
+    from {transform: translateX(-100vw);}
+    to {transform: translateX(0);}
 }
 
 @keyframes desapear {
-    from {transform: translateY(0);}
-    to {transform: translateY(-100vh);}
+    from {transform: translateX(0);}
+    to {transform: translateX(-100vw);}
 }
 
 .hide{
-    transform: translateY(-100vh); 
+    transform: translateX(-100vw); 
 }
 
 .height{

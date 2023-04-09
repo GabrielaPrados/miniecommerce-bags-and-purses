@@ -384,21 +384,21 @@ body > main {
     padding: 20px 40px 
 }
 
-.sectionCart .divCart article:first-of-type{
-    padding: 20px 30px 
+.sectionCart .divCart .cartArticle{
+    padding: 20px 30px;
 }
 
-.sectionCart .divCart article:first-of-type div {
+.sectionCart .divCart .cartArticle div {
     justify-content: space-between;
     flex-wrap: wrap;
     
 }
 
-.sectionCart .divCart article:first-of-type *{
+.sectionCart .divCart .cartArticle *{
     margin: 10px;
 }
 
-.sectionCart .divCart article:first-of-type button{
+.sectionCart .divCart .cartArticle button{
     width: 150px;
     margin-left: 20px;
 }
@@ -459,8 +459,8 @@ body > main {
     margin-left: 100px ;
 }
 
-.divCart > button,
-.sectionCart .divCart article:first-of-type button{
+.cartButtons > button,
+.sectionCart .divCart .cartArticle button{
     width: 200px;
     margin: 20px;
     padding: 10px;
@@ -473,14 +473,14 @@ body > main {
     transition: all .2s;
 }
 
-.sectionCart .divCart article:first-of-type button{
+.cartButtons .divCart .cartArticle button{
     width: 150px;
     background-color: var(--green);
     padding: 5px;
 }
 
 .divCart > button:hover,
-.sectionCart .divCart article:first-of-type button:hover{
+.sectionCart .divCart .cartArticle button:hover{
     cursor: pointer;
     border: 5px double var(--lightGray);
     margin: 15px 20px;
@@ -492,12 +492,12 @@ body > main {
         width: 90%;
     }
 
-    .sectionCart .divCart article:first-of-type div {
+    .sectionCart .divCart .cartArticle div {
          justify-content: center;
          margin: 10px auto;
     }
 
-    .sectionCart .divCart article:first-of-type div p{
+    .sectionCart .divCart .cartArticle div p{
         width: 100%;
     }
 

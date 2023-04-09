@@ -1,6 +1,6 @@
 
 let appProducts = products
-// const { img, brand, title, description, price } = appProducts
+
 
 /* function for creating buttons Brands */
 function displayBrands() {
@@ -10,7 +10,7 @@ function displayBrands() {
 }
 
 
-/* function which create the articles containing products and displaing them */
+/* function which create the articles containing products and displaying them */
 function displayProducts() {
     const divBagsCards = document.querySelector(".bagsCards")
     const input = document.querySelector("#search")
@@ -109,8 +109,6 @@ function LowerPrice() {
         products2.splice(products2.indexOf(product), 1)
     }
     products2 = [...appProducts]
-    console.log(products);
-    console.log(products2);
     return fromLowerPrice
 }
 
@@ -198,6 +196,68 @@ function addCart(t) {
     }
 } 
 
+/* whith this function I add the product to shopping cart when click is on buying button article */
+function addingProductToCart(t) {
     
+    const targetProduct = products.find(prod => prod.id == t.id)
+    const targetProductID = targetProduct.id
+    
+    if ( localStorage.getItem(`product${targetProductID}`)) {
+        shoppingsNumber(t)
+    } else {
+        localStorage.setItem(`product${targetProductID}`, targetProduct.id)
+        creatShoppingArticle(targetProduct, targetProductID)
+        shoppingsNumber(t)
+    }
+}
 
+function shoppingsNumber(t) {
+    const targetProduct = products.find(prod => prod.id == t.id)
+    const spans = document.querySelectorAll(".numberSpan")
+    const actualStock = document.querySelectorAll(`.prodStockSpan`)
+    spans.forEach(span => {
+        if (span.id.includes(t.id)) {
+            const actualNumber = Number(span.innerHTML)
+            span.innerHTML = actualNumber + 1
+        }
+    }) 
+        
+    actualStock.forEach(as => {
+        if (as.id.includes(t.id)) {
+            as.innerHTML = targetProduct.stock
+        }
+    }) 
+        
+    
+}
+// localStorage.clear()
+// console.log(localStorage.length);
 
+function creatShoppingArticle(targetProduct, targetProductID) {
+    
+    const reference = document.getElementById("deliver")
+    const { id, img, brand, title, description, price, stock } = targetProduct
+    const article = document.createElement("article")
+    article.classList.add("cartArticle")
+    article.id = `article${targetProductID}`
+    article.innerHTML =
+    `
+            <div  class="displayCenter">
+                <div class="description displayCenter">
+                    <img src="${img}" alt="${description}">
+                    <div>
+                        <h2>${title} - ${brand}</h2>
+                        <p>${description}</p>
+                    </div>
+                </div>
+                <div class="addSubstract displayCenter">
+                    <div class="displayCenter"><span>-</span><span id="span.${id}" class = "numberSpan">0</span><span>+</span></div>
+                    <p ><span id="prodStock${id}" class="prodStockSpan">${stock}</span> disponibles</p>
+                </div>
+                <p>$${new Intl.NumberFormat('de-DE').format(price)}</p>
+            </div>
+            <button>Eliminar</button>
+    `
+    reference.insertAdjacentElement("beforebegin", article)
+    
+}

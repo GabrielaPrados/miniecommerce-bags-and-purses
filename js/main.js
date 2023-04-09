@@ -1,9 +1,8 @@
 
-window.addEventListener("DOMContentLoaded", () => {
-    
+window.addEventListener("DOMContentLoaded", () => { 
 displayBrands()
-displayProducts()
-
+    displayProducts()
+    localStorage.clear()
 })
 
 document.addEventListener("click", e => {
@@ -53,9 +52,12 @@ document.addEventListener("click", e => {
     /* event for:
     1- add one to cart number 
     2 - substract one to stock 
-    3- if stock is === 0 => no stock */
+    3- if stock is === 0 => no stock
+    4- Adding selected product to shopping cart */
     if (t.classList.contains("addCart")) {
         addCart(t)
+        addingProductToCart(t)
+         
     }
 
 
@@ -63,7 +65,6 @@ document.addEventListener("click", e => {
     if (t.matches("#cartImg")) {
         
         const sectionCart = document.querySelector(".sectionCart")
-        console.log(sectionCart);
         sectionCart.classList.remove("hide")
         sectionCart.classList.remove("withoutHeight")
         sectionCart.classList.add("height")
@@ -73,12 +74,10 @@ document.addEventListener("click", e => {
     if (t.matches("#close")) {
         
         const sectionCart = document.querySelector(".sectionCart")
-        console.log(sectionCart);
         sectionCart.classList.remove("height")
         sectionCart.classList.add("withoutHeight")
         sectionCart.classList.add("hide")
     }
-   
 })
 
 document.addEventListener("change", e => {
