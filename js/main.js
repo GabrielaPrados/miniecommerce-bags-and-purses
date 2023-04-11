@@ -1,9 +1,13 @@
+/* --------------------------------------------------DOMCONTENTLOADED--------------------------------------------------------- */
 
 window.addEventListener("DOMContentLoaded", () => { 
-displayBrands()
+    /* dislplay brnads , products and resetting local storage */
+    displayBrands() 
     displayProducts()
-    localStorage.clear()
+    localStorage.clear() /* this is optional */
 })
+
+/* --------------------------------------------------CLICK--------------------------------------------------------- */
 
 document.addEventListener("click", e => {
     const t = e.target
@@ -29,9 +33,9 @@ document.addEventListener("click", e => {
         t.classList.toggle("displayBlock")
     }
     
-     /* SEARCH BY BRAND NAME  */
+     /* SEARCH BY BRAND NAME AND RESETTING SELECT */
     if (t.matches(".brands button")) {
-        searchButton(t)
+        searchButton(t) /* this function contains displayProducts() */
         resetSelect()
     }
     
@@ -39,7 +43,6 @@ document.addEventListener("click", e => {
     if (t.classList.contains("lowerPrice")) {
         appProducts = LowerPrice()
         displayProducts()
-        
     }
 
     /* DISPLAYING PRODUCTS FROM HIGHER PRICE  */
@@ -55,9 +58,8 @@ document.addEventListener("click", e => {
     3- if stock is === 0 => no stock
     4- Adding selected product to shopping cart */
     if (t.classList.contains("addCart")) {
-        addCart(t)
-        addingProductToCart(t)
-         
+        addCart(t)  /* this function contains displayProducts() */
+        addingProductToCart(t) /* THIS FUNCTION CONTAINS shoppingsNumber() */
     }
 
 
@@ -72,27 +74,50 @@ document.addEventListener("click", e => {
 
     /* EVENT FOR HIDEING CART */
     if (t.matches("#close")) {
-        
-        const sectionCart = document.querySelector(".sectionCart")
-        sectionCart.classList.remove("height")
-        sectionCart.classList.add("withoutHeight")
-        sectionCart.classList.add("hide")
+        backToProducts()
+    }
+
+    /* ADDING A PRODUCT FROM "+" SPAN AT CART*/
+    if (t.classList.contains("addingSpan")) {
+        addingFromCart(t)
+    }
+
+    /* SUBTRACTING A PRODUCT FROM "-" SPAN AT CART*/
+    if (t.classList.contains("substractingSpan")) {
+        substractingFromCart(t)
+    }
+
+    /* delete product from button "eliminar". Cart */
+    if (t.classList.contains("deleteBtn")) {
+        deleteProduct(t)
+    }
+
+    if (t.matches("#backToProducts")) {
+        backToProducts()
+    }
+
+    if (t.matches("#deleteCart")) {
+        deleteAllProducts(t)
     }
 })
+
+/* --------------------------------------------------CHANGE--------------------------------------------------------- */
 
 document.addEventListener("change", e => {
       const t = e.target  
 
-     /* SEARCHING PRODUCTS IN A RANGE OF PRICE */
+     /* SEARCHING PRODUCTS WITH A RANGE OF PRICE */
     if (t.matches("#prices")) {
-        rangePrices(t)
+        rangePrices(t) /* this function contains productsByRange() and this one contains displayProducts() */
     }
 })
+
+/* --------------------------------------------------SUBMIT--------------------------------------------------------- */
 
 /* THIS EVENT IS FOR SEARCHING PRODUCTS AND DISPLAYING THEM  */
 document.querySelector("#searchBrand").addEventListener("submit", e => {
     e.preventDefault()
-    searchInput()
+    searchInput() /* this function contains displayProducts() */
     resetSelect()
 })
 

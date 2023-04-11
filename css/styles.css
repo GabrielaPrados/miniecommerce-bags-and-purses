@@ -35,7 +35,7 @@
     align-items: center;
 }
 
-/* ------------------------------------------------------------------------------------------- */
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -288,6 +288,12 @@ body > main {
     transform: scale(1.1);
 }
 
+
+.cart img:hover{
+    cursor: pointer;
+}
+
+
 .bagsCards article:hover {
     box-shadow: 2px 2px 7px var(--lightGray), -2px -2px 7px var(--lightGray);
     margin: 15px auto;
@@ -347,6 +353,7 @@ body > main {
     
 }
 
+/* ///////////////////////////////////////////////////////////////////////////////////////////////// */
 /*------------------------------------------CART ------------------------------------------------- */
 
 
@@ -398,17 +405,33 @@ body > main {
     margin: 10px;
 }
 
-.sectionCart .divCart .cartArticle button{
-    width: 150px;
+.sectionCart .divCart  button{
+    width: 200px;
     margin-left: 20px;
 }
 
-.sectionCart .divCart img{
-    width: 150px;  
+.sectionCart .divCart .description img{
+    width: 200px; 
+    margin: 0px 20px 0px 0px; 
+}
+.sectionCart .divCart .description h2,
+.sectionCart .divCart .description p{
+    margin-left: 0px;
+}
+
+body .sectionCart .divCart .description{
+    justify-content: flex-start;
+    width: 600px;
+}
+
+body .sectionCart .divCart .description div{
+    margin : 10px 0px 20px 0px;   
 }
 
 .description p{
    font-size: 1rem;
+   text-align: left;
+   margin: 0px;
 }
 
 .divCart .addSubstract{
@@ -417,10 +440,9 @@ body > main {
 
 .sectionCart .divCart .addSubstract > div,
 .sectionCart .divCart .addSubstract p{
-    width: 100px;
+    width: 120px;
     text-align: center;
 }
-
 
 .sectionCart .divCart .addSubstract > div span{
     font-size: 1rem;
@@ -486,6 +508,13 @@ body > main {
     margin: 15px 20px;
 }
 
+.addingSpan:hover,
+.substractingSpan:hover,
+.sectionCart .divCart  button:hover{
+    cursor: pointer;
+}
+
+/*  ---------------------------------------------------- cart medias ------------------------------------------ */
 
 @media (max-width: 690px) {
     .sectionCart .divCart{
@@ -516,6 +545,8 @@ body > main {
         margin: 10px auto;
     }
 
+  
+
     .divCart .description div,
     .sectionCart .divCart .description p,
     .sectionCart .divCart .description h2{
@@ -524,4 +555,8 @@ body > main {
         margin: 0;
         padding: 0;
     }  
+
+    .sectionCart .divCart .description img{
+        margin: 10px auto;
+    }
 }
