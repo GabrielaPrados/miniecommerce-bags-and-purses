@@ -91,11 +91,13 @@ document.addEventListener("click", e => {
     if (t.classList.contains("deleteBtn")) {
         deleteProduct(t)
     }
-
+    
+    /* This event hides cart */
     if (t.matches("#backToProducts")) {
         backToProducts()
     }
 
+    /* Event for deletting all products at once */
     if (t.matches("#deleteCart")) {
         deleteAllProducts(t)
     }

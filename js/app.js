@@ -342,9 +342,6 @@ function addingFromCart(t) {
 }
 
 
-
-
-
 /* -----------------------------------------------SUBSTRACTING PRODUCTS------------------------------------------------------------------ */
 
 /* this function is for adding products from cards => - 0 + */
@@ -419,7 +416,6 @@ function substractDisponibiliy(id, prod) {
 /* -----------------------------------------------------------CART BUTTONS----------------------------------------------------------- */
 
 /* BUTTON "ELIMINAR" */
-
 function deleteProduct(t) {
     const id = t.id.split(".")[1]
     const targetProduct = products.find(prod => prod.id == id)
@@ -428,7 +424,6 @@ function deleteProduct(t) {
     const cartNumber = document.querySelector(".cart span")/* span beside cart img */
     const actualSpanNumber = Number(cartNumber.innerHTML)
     let prodcutNumber;
-   
 
     cartArticles.forEach(ca => {
         if (ca.id.includes(id)) {
@@ -455,16 +450,14 @@ function deleteProduct(t) {
 }
 
 /* BUTTON "CONTINUAR COMPRANDO" */
-
 function backToProducts() {
-    const sectionCart = document.querySelector(".sectionCart")
+    const sectionCart = document.querySelector(".sectionCart") /* CART */
     sectionCart.classList.remove("height")
     sectionCart.classList.add("withoutHeight")
     sectionCart.classList.add("hide")
 }
 
 /* BUTTON "BORRAR TODO" */
-
 function deleteAllProducts() {
     const disponibleStock = document.querySelectorAll(".stock")/* p in cards. It contains actuan stock (color green) */
     const cartArticles = document.querySelectorAll(".cartArticle")/* article created at creatShoppingArticle(). CARDS */
@@ -504,7 +497,6 @@ function deleteAllProducts() {
         setTimeout(() => {
             backToProducts()
         }, 2000);
-        
     }) 
 }
  
