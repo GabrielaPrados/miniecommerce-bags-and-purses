@@ -1,7 +1,7 @@
 let products = [
     {
         id: 1,
-        img: "../imgs/prune1.webp",
+        img: "http://127.0.0.1:5500/imgs/prune1.webp",
         brand: "Prune",
         title: "Cartera Bandolera",
         description: "Cartera Bandolera Odete Cuero Vacuno",
@@ -11,7 +11,7 @@ let products = [
     },
     {
         id: 2,
-        img: "../imgs/prune2.webp",
+        img: "http://127.0.0.1:5500/imgs/prune2.webp",
         brand: "Prune",
         title: "Cartera Bandolera",
         description: "Cartera Bandolera J Gang Nylon",
@@ -21,7 +21,7 @@ let products = [
     },
     {
         id: 3,
-        img: "../imgs/prune3.webp",
+        img: "http://127.0.0.1:5500/imgs/prune3.webp",
         brand: "Prune",
         title: "Mochila",
         description: "Mochila Prune Valentine Nylon",
@@ -31,7 +31,7 @@ let products = [
     },
     {
         id: 4,
-        img: "../imgs/prune4.webp",
+        img: "http://127.0.0.1:5500/imgs/prune4.webp",
         brand: "Prune",
         title: "Riñonera",
         description: "Riñonera Nylon Prune Mont Blanc New Arrivals Mujer",
@@ -41,7 +41,7 @@ let products = [
     },
     {
         id: 5,
-        img: "../imgs/trendy1.webp",
+        img: "http://127.0.0.1:5500/imgs/trendy1.webp",
         brand: "Trendy",
         title: "Bandolera",
         description: "Bandolera Trendy Dream Juvenil Color Pastel Tendencia",
@@ -51,7 +51,7 @@ let products = [
     },
     {
         id: 6,
-        img: "../imgs/trendy2.webp",
+        img: "http://127.0.0.1:5500/imgs/trendy2.webp",
         brand: "Trendy",
         title: "Morral Bolso",
         description: "Morral Bolso Urbano Viaje Unisex Tira Ajustable",
@@ -61,7 +61,7 @@ let products = [
     },
     {
         id: 7,
-        img: "../imgs/trendy3.webp",
+        img: "http://127.0.0.1:5500/imgs/trendy3.webp",
         brand: "Trendy",
         title: "Cartera",
         description: "Cartera Tote Trendy Mujer Liviana",
@@ -71,7 +71,7 @@ let products = [
     },
     {
         id: 8,
-        img: "../imgs/pierre1.webp",
+        img: "http://127.0.0.1:5500/imgs/pierre1.webp",
         brand: "Pierre Cardin",
         title: "Mochila",
         description: "Mochila Espalda Urbana Pierre Cardin Porta Tablet Oferta",
@@ -81,7 +81,7 @@ let products = [
     },
     {
         id: 9,
-        img: "../imgs/pierre2.webp",
+        img: "http://127.0.0.1:5500/imgs/pierre2.webp",
         brand: "Pierre Cardin",
         title: "Bandolera",
         description: "Bandolera Pierre Cardin Chica Clásica Calidad",
@@ -91,7 +91,7 @@ let products = [
     },
     {
         id: 10,
-        img: "../imgs/pierre3.webp",
+        img: "http://127.0.0.1:5500/imgs/pierre3.webp",
         brand: "Pierre Cardin",
         title: "Cartera",
         description: "Cartera Cuero P.u Importada Original Pierre Cardin",
@@ -101,7 +101,7 @@ let products = [
     },
     {
         id: 11,
-        img: "../imgs/oreiro1.webp",
+        img: "http://127.0.0.1:5500/imgs/oreiro1.webp",
         brand: "Las Oreiro",
         title: "Mini Morral",
         description: "Mini Morral Las Oreiro Microfibra C/ Monedero ",
@@ -111,7 +111,7 @@ let products = [
     },
     {
         id: 12,
-        img: "../imgs/oreiro2.webp",
+        img: "http://127.0.0.1:5500/imgs/oreiro2.webp",
         brand: "Las Oreiro",
         title: "Cartera",
         description: "Cartera Las Oreiro Mujer Con Correa Y Monedero New",
@@ -121,7 +121,7 @@ let products = [
     },
     {
         id: 13,
-        img: "../imgs/oreiro3.webp",
+        img: "http://127.0.0.1:5500/imgs/oreiro3.webp",
         brand: "Las Oreiro",
         title: "Riñonera",
         description: "Riñonera Las Oreiro Tendencia Práctica Moda",
@@ -131,7 +131,7 @@ let products = [
     },
     {
         id: 14,
-        img: "../imgs/saveiro1.webp",
+        img: "http://127.0.0.1:5500/imgs/saveiro1.webp",
         brand: "Saveiro de Ricci",
         title: "Cartera",
         description: "Cartera Kiara",
@@ -141,7 +141,7 @@ let products = [
     },
     {
         id: 15,
-        img: "../imgs/saveiro2.webp",
+        img: "http://127.0.0.1:5500/imgs/saveiro2.webp",
         brand: "Saveiro de Ricci",
         title: "Cartera",
         description: "cartera Bolso colores",
@@ -151,7 +151,7 @@ let products = [
     },
     {
         id: 16,
-        img: "../imgs/saveiro3.webp",
+        img: "http://127.0.0.1:5500/imgs/saveiro3.webp",
         brand: "Saveiro de Ricci",
         title: "Cartera",
         description: "Cartera Cuero Reptil",
@@ -161,7 +161,7 @@ let products = [
     },
     {
         id: 17,
-        img: "../imgs/louis1.webp",
+        img: "http://127.0.0.1:5500/imgs/louis1.webp",
         brand: "Louis Vuitton",
         title: "Cartera",
         description: "Cartera Muria",
@@ -171,7 +171,7 @@ let products = [
     },
     {
         id: 18,
-        img: "../imgs/louis2.webp",
+        img: "http://127.0.0.1:5500/imgs/louis2.webp",
         brand: "Louis Vuitton",
         title: "Cartera",
         description: "Cartera Passy",

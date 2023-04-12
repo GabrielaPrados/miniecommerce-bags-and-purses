@@ -29,7 +29,8 @@ function displayProducts() {
         },4000)
     }
     else {
-        divBagsCards.innerHTML =  appProducts.map(prod => {
+        divBagsCards.innerHTML = appProducts.map(prod => {
+            
             return `
                 <article>   
                     <header>
@@ -38,7 +39,7 @@ function displayProducts() {
                     </header>
                     <main class="displayCenter">
                         <div >
-                            <img src="${prod.img}" alt="${prod.title}">
+                            <img src="${prod.img}" alt="${prod.title}" class="bagsImgs">
                         </div>
                         <img src="imgs/heart.png" alt="corazon tranparente" class="heart">
                         <img src="imgs/redHeart.png" alt="corazon rojo" class="redHeart">
@@ -53,9 +54,12 @@ function displayProducts() {
                     <button id=${prod.id} class="addCart">Enviar a carrito</button>
                     <p id="disponibleStocK${prod.id}" class="displayCenter stock">StocK disponible:  ${prod.stock}</p>
                 </article>`
-            }).join("")
+        }).join("")
+        
     }
+    
 }
+
 
 /* -------------------------------------------------DIV.SEARCHPRODUCT---------------------------------------------------------------------------- */
 
@@ -256,7 +260,9 @@ function addingProductToCart(t) {
 
 /* function for adding one to cart number */
 function addCart(t, param) {
+    
     t ? param = t.id : param = param;
+    console.log(param);
     const targetProduct = products.find(prod => prod.id == param)
     const divCart = document.querySelector(".cart span")/* span beside cart img */
     const actualNumber = Number(divCart.innerHTML)
@@ -267,22 +273,18 @@ function addCart(t, param) {
         divCart.innerHTML = actualNumber + 1
         if (t) targetProduct.stock = targetProduct.stock - 1
         
-        disponibleStock.forEach(ds => {
-            if (ds.id.includes(param)) {
-                ds.innerHTML = `Stock disponible: ${targetProduct.stock}` 
-            }
-        }) 
+        disponibleStock[param-1].innerHTML = `Stock disponible: ${targetProduct.stock}`
         
     } else {
         t.nextElementSibling.innerHTML = "Sin stock" 
     }
     
     /*adding article stock */
-    stockCart.forEach(sc => {
-        if (sc.id.includes(param)) {
-            sc.innerHTML = targetProduct.stock 
-        }
-    }) 
+    if (stockCart[param - 1] ) {
+        console.log(stockCart);
+        console.log(stockCart[param - 1]);
+        stockCart[param-1].innerHTML = targetProduct.stock
+    }
 } 
 
 
@@ -297,12 +299,12 @@ function shoppingsNumber(t, param) {
     let subTotal = 0
     
     /* 1- gettin span to add a 1 */
-    spans.forEach(span => { /* cart span => - 0 + => numbers span */
-        if (span.id.includes(param)) {
-            const actualNumber = Number(span.innerHTML)
-            span.innerHTML = actualNumber + 1
-        }
-    }) 
+
+    if (spans[param - 1]) {
+        const actualNumber = Number( spans[param - 1].innerHTML)
+        spans[param - 1].innerHTML = actualNumber + 1
+    }
+
 
     /* 2- add price of the same product */
     totalPrice.forEach(tp => {
@@ -329,13 +331,11 @@ function shoppingsNumber(t, param) {
 function addingFromCart(t) { 
     const id = t.id.split(".")[1]
     const targetProduct = products.find(prod => prod.id == id)
-    const actualStock = document.querySelectorAll(`.prodStockSpan`) /* p in CARTS. It contains actuan stock (color tranparent red) under - 0 + */
+    const actualStock = document.querySelectorAll(`.prodStockSpan`) /* p in CARTS. It contains actuan stock (color red) under - 0 + */
     targetProduct.stock = targetProduct.stock - 1
-    actualStock.forEach(as => {
-        if (as.id.includes(id)) {
-            as.innerHTML = targetProduct.stock
-        }
-    })
+
+    actualStock[id - 1].innerHTML = targetProduct.stock
+    
     shoppingsNumber(null, id)  
     addCart(null, id)
     finalPrice()
@@ -344,7 +344,7 @@ function addingFromCart(t) {
 
 /* -----------------------------------------------SUBSTRACTING PRODUCTS------------------------------------------------------------------ */
 
-/* this function is for adding products from cards => - 0 + */
+/* this function is for substracting products from cards => - 0 + */
 function substractingFromCart(t) {
     const id = t.id.split(".")[1]
     const targetProduct = products.find(prod => prod.id == id)
@@ -352,12 +352,8 @@ function substractingFromCart(t) {
     const spans = document.querySelectorAll(".numberSpan") /* cart span => - 0 + => numbers span */
     const cartArticles = document.querySelectorAll(".cartArticle") /* article created at creatShoppingArticle(). CARDS */
     targetProduct.stock = targetProduct.stock + 1
-
-    actualStock.forEach(as => {
-        if (as.id.includes(id)) {
-            as.innerHTML = targetProduct.stock
-        }
-    })
+    
+    actualStock[id - 1].innerHTML = targetProduct.stock
 
     spans.forEach(sp => {
         if (sp.id.includes(id)) {
@@ -406,11 +402,7 @@ function substractCart() {
 /* function to substract disponibility at cards (green p at card bottom) */
 function substractDisponibiliy(id, prod) {
     const disponibleStock = document.querySelectorAll(".stock") /* p in cards. It contains actuan stock (color green) */
-    disponibleStock.forEach(ds => {
-        if (ds.id.includes(id)) {
-            ds.innerHTML = `Stock disponible: ${prod.stock}` 
-        }
-    }) 
+    disponibleStock[id-1].innerHTML = `Stock disponible: ${prod.stock}`
 }
 
 /* -----------------------------------------------------------CART BUTTONS----------------------------------------------------------- */
@@ -431,7 +423,7 @@ function deleteProduct(t) {
             const disponibleStock = document.querySelectorAll(".stock")/* p in cards. It contains actuan stock (color green) */
             spans.forEach(span => {
                 if (span.id.includes(id)) prodcutNumber = Number(span.innerHTML)
-                console.log(actualSpanNumber, typeof actualSpanNumber);
+               
                 cartNumber.innerHTML = actualSpanNumber - prodcutNumber
             } )
             parentNode.removeChild(ca)

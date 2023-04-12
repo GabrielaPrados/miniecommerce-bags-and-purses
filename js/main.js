@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", () => {
     displayBrands() 
     displayProducts()
     localStorage.clear() /* this is optional */
+    console.dir(document.querySelectorAll(".bagsImgs"));
 })
 
 /* --------------------------------------------------CLICK--------------------------------------------------------- */
