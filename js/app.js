@@ -30,7 +30,6 @@ function displayProducts() {
     }
     else {
         divBagsCards.innerHTML = appProducts.map(prod => {
-            
             return `
                 <article>   
                     <header>
